@@ -1,3 +1,4 @@
+/************** General Styling **************/
 * {
   box-sizing: border-box;
 }
@@ -15,16 +16,22 @@ html, body {
 body {
   font-family: "Lato", sans-serif;
   background: url("../images/pinkdots-bg.jpg") repeat;
+  color: rgb(62,31,0);
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: "Kalam", cursive;
+  color: rgb(62,31,0);
 }
 
 h1 {
   padding: 0;
   margin: 0;
   font-size: 1.75em;
+}
+
+h3 {
+  font-size: 1.5rem;
 }
 
 .button {
@@ -42,7 +49,7 @@ h1 {
 }
 
 .wrapper {
-  max-width: 80%;
+  max-width: 90%;
   min-height: 100%;
   margin: 0 auto -2rem auto;
   padding: 1em 1em 2em 1em;
@@ -57,6 +64,108 @@ header {
   display: flex;
   justify-content: space-between;
 }
+
+header + section {
+  margin: 1rem 0rem;
+}
+
+.social > a > p {
+  margin: 2rem 0 1rem;
+  padding: 0;
+  font-size: 1.25rem;
+  display: inline-block;
+}
+
+.social > a >svg {
+  max-height: 2rem;
+  max-width: 2rem;
+  margin: 0 0.25rem;
+  padding: 0;
+  display: inline-block;
+}
+
+footer {
+  max-width: 90%;
+  height: 3rem;
+  background-color: rgb(63,31,0);
+  color: rgb(255,230,240);
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 0.5rem 0;
+  margin: 1rem auto 0;
+}
+
+/************* Form Styling *************/
+
+.form {
+  margin-top: 1rem;
+  border: 0.125rem solid rgb(62,31,0);
+  padding: 1rem;
+  border-radius: 0.313rem;
+  box-shadow: 0.25rem 0.25rem 0.25rem rgba(0,0,0,0.4);
+  background-color: rgb(255,128,179);
+}
+
+.form > fieldset {
+  border: none;
+  text-align: left;
+}
+
+.form > fieldset > label {
+  display: block;
+}
+
+.form > fieldset > input[type="text"],
+.form > fieldset > input[type="email"],
+.form > fieldset > input[type="tel"],
+.form > fieldset > input[type="date"],
+.form > fieldset > textarea {
+  width: 100%;
+  border: none;
+  border-radius: 0.313rem;
+  line-height: 1.5rem;
+  background-color: rgb(255,230,240);
+}
+
+.form > fieldset > input[type="text"]:hover,
+.form > fieldset > input[type="email"]:hover,
+.form > fieldset > input[type="tel"]:hover,
+.form > fieldset > textarea:hover {
+  border-bottom: 0.25rem solid rgb(62,31,0);
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+.form > fieldset > input[type="radio"] + label {
+  display: inline-block;
+  margin: 0 0.5rem 0.5rem;
+  width: 10rem;
+}
+
+.form > fieldset > input[type="radio"] + label::before,
+.carousel > input[type='radio'] + label {
+  content: '';
+  width: 0.75rem;
+  height: 0.75rem;
+  margin: 0 0.5rem 0.5rem;
+  background-color: rgb(255,230,240);
+  box-shadow: 0 0 0 0.125rem rgba(62,31,0, 0.5);
+  border: 0.125rem solid rgb(255,128,179);
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.form > fieldset >input[type="radio"]:checked + label::before,
+.carousel > input[type='radio']:checked + label {
+  background-color: rgb(62,31,0);
+  border: 0.125rem solid rgb(255,128,179);
+  transition: all 0.5s ease-in-out;
+}
+
+/************** Navigation Styles *****************/
 
 .logo {
   height: 4rem;
@@ -106,7 +215,7 @@ header {
 .nav-menu li:hover,
 .nav-drop li:hover {
   transform: scale(1.3);
-  transition: transform: 0.7s ease-in-out;
+  transition: transform 0.7s ease-in-out;
 }
 
 .nav-icon {
@@ -122,69 +231,129 @@ header {
   margin: 0.25rem 0;
 }
 
-.intro {
+/************************* Headline Styles *****************/
+.headline {
   margin-top: 1.5em;
 }
 
-.intro-name {
+.headline-name {
   text-shadow: 0.12em 0.12em 0.12em rgba(255, 128, 179, 0.8);
 }
 
-.intro-tagline {
+.headline-tagline {
   font-size: 0.9em;
   margin-top: -1em;
   padding: 0;
   color: #ff4d94;
 }
 
+/******************** Home Page Styles ******************/
 .carousel {
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.carousel-img {
   max-width: 100%;
-  margin: 1em 0;
+  overflow: hidden;
+  background-color: rgba(255,128,179, 0.3);
+  padding: 1rem 0;
+  margin: 1rem 0;
 }
 
-.carousel-arrow {
-  position: absolute;
-  top: 50%;
-  font-size: 1.5rem;
-  color: rgb(255,128,179);
-  transition: transform 0.5s ease-in-out;
+#slide1:checked ~ #carousel-slides {
+  margin-left: 0;
 }
 
-.carousel-prev {
-  left: -1rem;
+#slide2:checked ~ #carousel-slides {
+  margin-left: -100%;
 }
 
-.carousel-next {
-  right: -1rem;
+#slide3:checked ~ #carousel-slides {
+  margin-left: -200%;
 }
 
-.carousel-arrow:hover {
-  transform: scale(1.3);
+#slide4:checked ~ #carousel-slides {
+  margin-left: -300%;
 }
 
-.order {
+#carousel-slides {
+  width: 400%;
+}
+
+.carousel > img {
+  width: 100%;
+}
+
+#carousel-slides > picture {
+  width: 25%;
+  float: left;
+}
+
+.home-order {
   padding: 0;
   margin-bottom: 1rem;
 }
 
-footer {
-  max-width: 80%;
-  height: 3rem;
-  background-color: rgb(63,31,0);
-  color: rgb(255,230,240);
-  font-size: 0.9rem;
-  text-align: center;
-  padding: 0.5rem 0;
-  margin: 1rem auto 0;
+.home-order > h1 {
+  margin-bottom: 1rem;
 }
 
+
+/***********Contact Page Styles**********/
+.contact > section > h3 {
+  margin: 2rem 0 0;
+}
+
+.contact > section > p > a {
+  color: rgb(255,0,102);
+}
+
+
+/**************** Menu Page Styles *******************/
+.menu {
+  text-align: left;
+}
+
+.page-title {
+  margin-bottom: 1rem;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.menu > div {
+  border-bottom: 0.125rem solid rgb(62,31,0);
+}
+
+.menu > div:last-of-type {
+  padding-bottom: 1rem;
+}
+
+.menu > div > h3 {
+  margin-bottom: 0.313rem;
+  padding-bottom: 0;
+}
+
+.menu > div > h3 + h4 {
+  margin: 0;
+}
+
+.menu > div > ul {
+  list-style: none;
+  list-style-position: inside;
+}
+
+.menu-cakes > span > a {
+  color: rgb(255,0,102);
+}
+
+/*************** Media Queries **********************/
 @media screen and (min-width: 768px) {
+  .wrapper {
+    max-width: 80%;
+  }
+  
+  header + section {
+    margin: 3rem 0rem;
+  }
+  
   .logo {
     height: 8rem;
   }
@@ -199,19 +368,113 @@ footer {
     font-size: 1.25rem;
   }
   
-  .intro-name {
+  .headline-name {
     font-size: 2.5rem;
     margin-top: 1.5rem;
   }
   
-  .intro-tagline {
+  .headline-tagline {
     font-size: 1.25rem;
+  }
+  
+  footer {
+    max-width: 80%;
+  }
+} 
+
+@media screen and (min-width:1024px) {
+  .wrapper {
+    padding: 3rem;
+  }
+  
+  .home > p {
+      max-width: 800px;
+      margin: 0.5em auto;
+  }
+  
+  input[type='radio'] + label {
+      height: 1rem;
+      width: 1rem;
+  }
+ /***********Contact Page Styles**********/   
+  .contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  
+  .contact section:first-child {
+    max-width: 40%;
+  }
+   
+  /**************** Menu Page Styles *******************/
+  .menu {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(6, auto);
+  }
+   
+   .menu-icon {
+    display: block;
+  }
+  
+  .box-a,
+  .box-b,
+  .box-e,
+  .box-f,
+  .box-i,
+  .box-j {
+    background-color: rgb(255,204,224);
+  }
+  
+  .box-a,
+  .box-e,
+  .box-i {
+    padding-left: 2rem;
+  }
+  
+  .box-d,
+  .box-h,
+  .box-l {
+    padding-right: 2rem;
+  }
+  
+  .box-b > svg {
+    margin-top: 10rem;
+    margin-left: 5rem;
+  } 
+  
+  .box-c > svg {
+    margin-top: 7.5rem;
+    margin-left: 3rem;
+  }
+
+  .box-f > svg,
+  .box-g > svg,
+  .box-j > svg,
+  .box-k > svg {
+    margin-left: 4rem;
+  }  
+  
+  .box-f > svg {
+    margin-top: 2.5rem;
+  }
+  
+  .box-g > svg {
+    margin-top: 5rem;
   }
 }
 
-@media screen and (min-width:1024px) {
-  .intro-intro {
-      max-width: 800px;
-      margin: 0.5em auto;
+
+@media screen and (min-width: 1360px) {
+  .logo {
+    height: 10rem;
+    margin-left: 2rem;
+  }
+  
+  .headline {
+    margin-top: -2rem;;
   }
 }

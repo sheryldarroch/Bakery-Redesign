@@ -19,16 +19,16 @@
 							<div class="nav-icon-line"></div>            
 						</div> <!-- end .nav-icon -->
 						<ul class="nav-drop" id="nav-drop">
-							<li><a href="index.html" class="selected">Home</a></li>
+							<li><a href="index.html">Home</a></li>
 							<li><a href="menu.html">Menu</a></li>
 							<li><a href="order.html" target="_blank">Order</a></li>
-							<li><a href="contact.html">Contact</a></li>          
+							<li><a href="contact.html" class="selected">Contact</a></li>          
 						</ul> <!-- end .nav-drop -->
 						<ul class="nav-menu">
-							<li><a href="index.html" class="selected">Home</a></li>
+							<li><a href="index.html">Home</a></li>
 							<li><a href="menu.html">Menu</a></li>
 							<li><a href="order.html" target="_blank">Order</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="contact.html" class="selected">Contact</a></li>
 						</ul> <!-- end .nav-menu -->
 					</nav>
 				</header>
@@ -37,55 +37,37 @@
 					<h1 class="headline-name">I Can't Believe It's Gluten-Free</h1>
 					<span class="headline-tagline">Gluten-Free Baked Goods That Don't Taste Gluten-Free</span>
 				</section> <!-- end .intro -->
-        <div class="about">
-					<p>We are a gluten-free bakery, specializing in home made from scratch, gluten-free baked goods that don't taste gluten-free. Our unique blend of flours is the secret to keeping our baked goods moist and delicious.</p>
-        </div>
       
-
-				<section class="carousel">
-          
-          <input type="radio" name="slider" id="slide1" value="slide1" checked>
-          <label for="slide1"></label>
-          <input type="radio" name="slider" id="slide2" value="slide2">
-          <label for="slide2"></label>
-          <input type="radio" name="slider" id="slide3" value="slide3">
-          <label for="slide3"></label>
-          <input type="radio" name="slider" id="slide4" value="slide4">
-          <label for="slide4"></label>
-
-                 
-          <section id="carousel-slides">
-             <picture>
-               <source media="(max-width: 675px)" srcset="images/cranberryshortbread-200">
-               <source media="(max-width: 1330px)" srcset="images/cranberryshortbread-500">               
-               <img src="images/cranberryshortbread-1000.jpg" alt="Photo of cranberry stuffed shortbread on a white plate">
-             </picture>
-             
-             <picture>
-               <source media="(max-width: 675px)" srcset="images/bdaycake-200">
-               <source media="(max-width: 1330px)" srcset="images/bdaycake-500">  
-               <img src="images/bdaycake-1000.jpg" alt="Photo of birthday cake with purple zebra stripes">
-             </picture>
-             
-             <picture>
-               <source media="(max-width: 675px)" srcset="images/cookies-200">
-               <source media="(max-width: 1330px)" srcset="images/cookies-500">                             
-               <img src="images/cookies-1000.jpg" alt="Photo of packaged white chocoalte macadamia nut cookies">
-             </picture>
-             
-             <picture>
-               <source media="(max-width: 675px)" srcset="images/smorescupcakes-200">
-               <source media="(max-width: 1330px)" srcset="images/smorescupcakes-500">               
-               <img src="images/smorescupcakes-1000.jpg" alt="Photo of s'mores cupcakes on a white platter">
-             </picture>          
-          </section> <!-- end #carousel-slides -->
-
-				</section><!-- end .carousel -->
+        <section class="contact">
+          <section>
+            <h3>General Information</h3>
+            <p>We are currently available for orders of all sizes. Whether you are looking for a dozen cookies to satisfy your sweet tooth, several dozen cupcakes for a birthday party, or a cake for a special occasion; we would be happy to discuss the details.</p>
+            <p>Please use our <a href="order.html">online ordering system</a> for best results. You will receive a phone call with in one business day to discuss the details. All orders must be placed at least one week prior to date of delivery.</p>
+          </section>
+          <section>
+            <h3>Contact Us</h3>
+            <form class="form" method="POST" action="https://formspree.io/icantbelieveitsgf@gmail.com">
+              <fieldset>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="user_name" required>
+              </fieldset>
+              <fieldset>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="user_email" required>
+              </fieldset>
+              <fieldset>
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="user_phone">
+              </fieldset>
+              <fieldset>
+                <label for="msg">Message</label>
+                <textarea id="msg" name="user_msg" required></textarea>
+              </fieldset>
+              <button class="button" type="submit" value="Submit">Send Message</button>
+            </form>
+          </section>
+        </section>
       
-				<section class="home-order">
-					<h1>Already know what you want?</h1>
-					<a href="order.html" target="_blank" class="button">Place Order</a>
-				</section> <!-- end .order -->
         <div class="social">
          <a href="http://facebook.com/icantbelieveitsgf">
             <p>Follow us on</p>
@@ -127,7 +109,8 @@
  
           </a>
         </div>
-    </div> <!-- end .wrapper -->
+      
+    </div> <!-- end .wrapper -->   
     <footer>
 			<p>&#9400; 2017 Sheryl Darroch</p>
 		</footer>
